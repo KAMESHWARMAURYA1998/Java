@@ -1,0 +1,31 @@
+package javatut;
+
+import java.util.Scanner;
+
+public class digitfrequencycount {
+	
+	public static int getDigitCount(int n, int number) {
+		int count = 0;
+		while(n>0) {
+		
+		int dig = n % 10;
+		n = n /10;
+		if(dig == number) {
+			count++;
+		}
+		}
+		return  count ;
+	}
+
+	public static void main(String[] args)throws Exception {
+		// TODO Auto-generated method stub
+		Scanner scn = new Scanner(System.in);
+		System.out.print("Enter Digit :");
+		int n = scn.nextInt();
+        System.out.print("Enter Number Which want to Count :");
+        int number = scn.nextInt();
+        int d = getDigitCount(n , number);
+        System.out.print(d);
+	}
+
+}
