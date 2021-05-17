@@ -1,0 +1,33 @@
+package javatut;
+
+import java.util.*;
+
+public class decimalToanybase {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		System.out.print("Enter Number :");
+		int n = scn.nextInt();
+		System.out.print("Enter base :");
+		int b = scn.nextInt();
+		
+		int d= decimalToAnyBase(n , b);
+		System.out.print(d);
+		
+	}
+	
+	
+	public static int decimalToAnyBase(int n, int b) {
+		int p=1;
+		int rv = 0;
+		while(n>0) {
+			int dig = n % b;
+			n = n/b;
+		   rv = rv + dig * p;
+		   p = p*10;
+		}
+		
+		return rv;
+	}
+
+}
